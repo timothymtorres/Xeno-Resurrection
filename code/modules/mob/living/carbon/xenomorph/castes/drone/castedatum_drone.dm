@@ -28,7 +28,7 @@
 	evolution_threshold = 80
 	upgrade_threshold = 60
 
-	evolves_to = list(/mob/living/carbon/xenomorph/queen, /mob/living/carbon/xenomorph/hivemind)
+	evolves_to = list(/mob/living/carbon/xenomorph/queen, /mob/living/carbon/xenomorph/sentinel, /mob/living/carbon/xenomorph/hunter, /mob/living/carbon/xenomorph/spitter, /mob/living/carbon/xenomorph/hivemind)
 
 	// *** Flags *** //
 	caste_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_EVOLUTION_ALLOWED|CASTE_CAN_HOLD_FACEHUGGERS|CASTE_CAN_VENT_CRAWL|CASTE_CAN_BE_GIVEN_PLASMA|CASTE_CAN_BE_LEADER
