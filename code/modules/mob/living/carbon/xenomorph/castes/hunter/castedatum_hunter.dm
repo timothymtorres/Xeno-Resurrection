@@ -31,8 +31,7 @@
 	evolution_threshold = 180
 	upgrade_threshold = 120
 
-	evolves_to = list(/mob/living/carbon/xenomorph/ravager)
-	deevolves_to = /mob/living/carbon/xenomorph/runner
+	deevolves_to = /mob/living/carbon/xenomorph/drone
 
 	// *** Flags *** //
 	caste_flags = CASTE_CAN_BE_QUEEN_HEALED|CASTE_EVOLUTION_ALLOWED|CASTE_CAN_VENT_CRAWL|CASTE_CAN_BE_GIVEN_PLASMA|CASTE_CAN_BE_LEADER
