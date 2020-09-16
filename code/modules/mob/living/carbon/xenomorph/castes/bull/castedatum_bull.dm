@@ -4,7 +4,7 @@
 	upgrade_name = ""
 	caste_desc = "A well defended hit-and-runner."
 	caste_type_path = /mob/living/carbon/xenomorph/bull
-	tier = XENO_TIER_TWO
+	tier = XENO_TIER_THREE
 	upgrade = XENO_UPGRADE_BASETYPE
 	wound_type = "bull" //used to match appropriate wound overlays
 

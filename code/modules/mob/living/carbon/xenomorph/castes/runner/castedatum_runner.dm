@@ -4,7 +4,7 @@
 	upgrade_name = ""
 	caste_desc = "A fast, four-legged terror, but weak in sustained combat."
 	caste_type_path = /mob/living/carbon/xenomorph/runner
-	tier = XENO_TIER_ONE
+	tier = XENO_TIER_THREE
 	upgrade = XENO_UPGRADE_BASETYPE
 	wound_type = "runner" //used to match appropriate wound overlays
 

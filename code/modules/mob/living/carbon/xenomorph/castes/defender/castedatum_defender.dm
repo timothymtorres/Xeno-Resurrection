@@ -6,7 +6,7 @@
 
 	caste_type_path = /mob/living/carbon/xenomorph/defender
 
-	tier = XENO_TIER_ONE
+	tier = XENO_TIER_THREE
 	upgrade = XENO_UPGRADE_BASETYPE
 	wound_type = "defender" //used to match appropriate wound overlays
 
