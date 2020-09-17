@@ -36,6 +36,8 @@
 #define CAT_MAS "MASKS"
 #define CAT_ATT "GUN ATTACHMENTS"
 
+#define CAT_PVTKIT "PRIVATE KITS"
+#define CAT_PVTSUP "PRIVATE SUPPLIES"
 #define CAT_MEDSUP "MEDICAL SUPPLIES"
 #define CAT_ENGSUP "ENGINEERING SUPPLIES"
 #define CAT_LEDSUP "LEADER SUPPLIES"
@@ -59,6 +61,8 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		CAT_MAS = list(MARINE_CAN_BUY_MASK),
 		CAT_ATT = list(MARINE_CAN_BUY_ATTACHMENT,MARINE_CAN_BUY_ATTACHMENT2),
 		CAT_ESS = list(MARINE_CAN_BUY_ESSENTIALS),
+		CAT_PVTKIT = null,
+		CAT_PVTSUP = null,
 		CAT_MEDSUP = null,
 		CAT_ENGSUP = null,
 		CAT_LEDSUP = null,
@@ -284,6 +288,7 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 	desc = "An automated closet hooked up to a colossal storage unit of standard-issue uniform and armor."
 	icon_state = "marineuniform"
 	vendor_role = /datum/job/terragov/squad/standard
+	use_points = TRUE
 	categories = list(
 		CAT_STD = list(MARINE_CAN_BUY_UNIFORM),
 		CAT_HEL = list(MARINE_CAN_BUY_HELMET),
@@ -293,25 +298,18 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		CAT_BEL = list(MARINE_CAN_BUY_BELT),
 		CAT_POU = list(MARINE_CAN_BUY_R_POUCH,MARINE_CAN_BUY_L_POUCH),
 		CAT_MAS = list(MARINE_CAN_BUY_MASK),
-		CAT_ATT = list(MARINE_CAN_BUY_ATTACHMENT,MARINE_CAN_BUY_ATTACHMENT2),
 	)
 
 	listed_products = list(
 		/obj/effect/essentials_set/basic = list(CAT_STD, "Standard Kit", 0, "white"),
-		/obj/effect/essentials_set/basicmodular = list(CAT_STD, "Essential Jaeger Kit", 0, "white"),
-		/obj/effect/essentials_set/modular/infantry = list(CAT_AMR, "Medium Infantry Jaeger kit", 0, "orange"),
-		/obj/effect/essentials_set/modular/skirmisher = list(CAT_AMR, "Light Skirmisher Jaeger kit", 0, "orange"),
-		/obj/effect/essentials_set/modular/assault = list(CAT_AMR, "Heavy Assault Jaeger kit", 0, "orange"),
-		/obj/item/helmet_module/welding = list(CAT_HEL, "Jaeger welding module", 0, "orange"),
-		/obj/item/helmet_module/binoculars =  list(CAT_HEL, "Jaeger binoculars module", 0, "orange"),
-		/obj/item/helmet_module/antenna = list(CAT_HEL, "Jaeger Antenna module", 0, "orange"),
-		/obj/item/clothing/head/helmet/marine/standard = list(CAT_HEL, "Regular helmet", 0, "black"),
+
+		/obj/item/clothing/head/helmet/marine/standard = list(CAT_HEL, "Regular helmet", 0, "white"),
+
 		/obj/item/clothing/suit/storage/marine/pasvest = list(CAT_AMR, "Regular armor", 0, "orange"),
+
 		/obj/item/storage/backpack/marine/satchel = list(CAT_BAK, "Satchel", 0, "orange"),
 		/obj/item/storage/backpack/marine/standard = list(CAT_BAK, "Backpack", 0, "black"),
-		/obj/item/clothing/tie/storage/black_vest = list(CAT_WEB, "Tactical black vest", 0, "orange"),
-		/obj/item/clothing/tie/storage/webbing = list(CAT_WEB, "Tactical Webbing", 0, "black"),
-		/obj/item/clothing/tie/holster = list(CAT_WEB, "Shoulder handgun holster", 0, "black"),
+
 		/obj/item/storage/belt/sparepouch = list(CAT_BEL, "Utility belt", 0, "black"),
 		/obj/item/storage/belt/marine = list(CAT_BEL, "Standard ammo belt", 0, "orange"),
 		/obj/item/storage/belt/shotgun = list(CAT_BEL, "Shotgun ammo belt", 0, "orange"),
@@ -319,16 +317,7 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/storage/belt/gun/pistol/standard_pistol = list(CAT_BEL, "Pistol belt", 0, "black"),
 		/obj/item/storage/belt/gun/revolver/standard_revolver = list(CAT_BEL, "Revolver belt", 0, "black"),
 		/obj/item/belt_harness/marine = list(CAT_BEL, "Belt harness", 0, "black"),
-		/obj/item/storage/pouch/shotgun = list(CAT_POU, "Shotgun shell pouch", 0, "black"),
-		/obj/item/storage/pouch/magazine = list(CAT_POU, "Magazine pouch", 0, "black"),
-		/obj/item/storage/pouch/flare/full = list(CAT_POU, "Flare pouch", 0, "orange"),
-		/obj/item/storage/pouch/firstaid/full = list(CAT_POU, "Firstaid pouch", 0,"orange"),
-		/obj/item/storage/pouch/firstaid/injectors/full = list(CAT_POU, "Injector pouch", 0,"orange"),
-		/obj/item/storage/pouch/tools/full = list(CAT_POU, "Tool pouch (tools included)", 0,"black"),
-		/obj/item/storage/pouch/grenade/slightlyfull = list(CAT_POU, "Grenade pouch (grenades included)", 0,"black"),
-		/obj/item/storage/pouch/construction/full = list(CAT_POU, "Construction pouch (materials included)", 0,"black"),
-		/obj/item/storage/pouch/magazine/pistol = list(CAT_POU, "Pistol magazine pouch", 0,"black"),
-		/obj/item/storage/pouch/pistol = list(CAT_POU, "Sidearm pouch", 0,"black"),
+
 		/obj/item/clothing/mask/gas = list(CAT_MAS, "Gas mask", 0,"black"),
 		/obj/item/clothing/mask/rebreather/scarf = list(CAT_MAS, "Heat absorbent coif", 0,"black"),
 		/obj/item/clothing/mask/bandanna = list(CAT_MAS, "Tan bandanna", 0,"black"),
@@ -337,17 +326,63 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/clothing/mask/bandanna/black = list(CAT_MAS, "Black bandanna", 0,"black"),
 		/obj/item/clothing/mask/bandanna/skull = list(CAT_MAS, "Skull bandanna", 0,"black"),
 		/obj/item/clothing/mask/rebreather = list(CAT_MAS, "Rebreather", 0,"black"),
-		/obj/item/attachable/suppressor = list(CAT_ATT, "Suppressor", 0,"black"),
-		/obj/item/attachable/extended_barrel = list(CAT_ATT, "Extended barrel", 0,"orange"),
-		/obj/item/attachable/compensator = list(CAT_ATT, "Recoil compensator", 0,"black"),
-		/obj/item/attachable/magnetic_harness = list(CAT_ATT, "Magnetic harness", 0,"orange"),
- 		/obj/item/attachable/reddot = list(CAT_ATT, "Red dot sight", 0,"black"),
-		/obj/item/attachable/lasersight = list(CAT_ATT, "Laser sight", 0,"black"),
-		/obj/item/attachable/verticalgrip = list(CAT_ATT, "Vertical grip", 0,"black"),
-		/obj/item/attachable/scope/mini = list(CAT_ATT, "Mini scope", 0,"black"),
-		/obj/item/attachable/angledgrip = list(CAT_ATT, "Angled grip", 0,"orange"),
-		/obj/item/attachable/stock/t35stock = list(CAT_ATT, "T-35 stock", 0,"black"),
-		/obj/item/attachable/stock/t19stock = list(CAT_ATT, "T-19 machine pistol stock", 0,"black"),
+
+		/obj/item/storage/pouch/general/medium = list(CAT_POU, "Medium general pouch", 0, "black"),
+		/obj/item/storage/pouch/flare/full = list(CAT_POU, "Flare pouch", 0, "orange"),
+		/obj/item/storage/pouch/magazine/pistol = list(CAT_POU, "Pistol magazine pouch", 0,"black"),
+		/obj/item/storage/pouch/pistol = list(CAT_POU, "Sidearm pouch", 0,"black"),
+		/obj/item/storage/pouch/firstaid/full = list(CAT_POU, "Firstaid pouch", 0, "orange"),
+
+//		/obj/item/storage/box/spec/demolitionist = list(CAT_ESS, "Demolitionist Set", 0, "white"),
+//		/obj/item/storage/box/spec/heavy_grenadier = list(CAT_ESS, "Heavy Grenadier Set", 0, "white"),
+//		/obj/item/storage/box/spec/heavy_gunner = list(CAT_ESS, "Heavy Gunner Set", 0, "white"),
+		/obj/item/storage/box/spec/pyro = list(CAT_PVTKIT, "Pyro Set", 45, "black"),
+		/obj/item/storage/box/t26_system = list(CAT_PVTKIT, "Essential Smartgunner Set", 45, "black"),
+//		/obj/item/ammo_magazine/standard_smartmachinegun = list(CAT_SPEAMM, "T26 ammo drum", 45, "black"),
+
+		/obj/item/attachable/suppressor = list(CAT_PVTSUP, "Suppressor", 5,"black"),
+		/obj/item/attachable/extended_barrel = list(CAT_PVTSUP, "Extended barrel", 5,"orange"),
+		/obj/item/attachable/compensator = list(CAT_PVTSUP, "Recoil compensator", 5,"black"),
+		/obj/item/attachable/magnetic_harness = list(CAT_PVTSUP, "Magnetic harness", 5,"orange"),
+ 		/obj/item/attachable/reddot = list(CAT_PVTSUP, "Red dot sight", 5,"black"),
+		/obj/item/attachable/lasersight = list(CAT_PVTSUP, "Laser sight", 5,"black"),
+		/obj/item/attachable/verticalgrip = list(CAT_PVTSUP, "Vertical grip", 5,"black"),
+		/obj/item/attachable/scope/mini = list(CAT_PVTSUP, "Mini scope", 5,"black"),
+		/obj/item/attachable/angledgrip = list(CAT_PVTSUP, "Angled grip", 5,"orange"),
+		/obj/item/attachable/stock/t35stock = list(CAT_PVTSUP, "T-35 stock", 5,"black"),
+		/obj/item/attachable/stock/t19stock = list(CAT_PVTSUP, "T-19 machine pistol stock", 5,"black"),
+
+		/obj/item/storage/pouch/shotgun = list(CAT_PVTSUP, "Shotgun shell pouch", 0, "black"),
+		/obj/item/storage/pouch/magazine = list(CAT_PVTSUP, "Magazine pouch", 0, "black"),
+		/obj/item/storage/pouch/magazine/large = list(CAT_PVTSUP, "Large magazine pouch", 0, "black"),
+		/obj/item/storage/pouch/magazine/pistol/large = list(CAT_PVTSUP, "Large pistol magazine pouch", 0, "black"),
+		/obj/item/storage/pouch/tools/full = list(CAT_PVTSUP, "Tool pouch (tools included)", 0,"black"),
+		/obj/item/storage/pouch/grenade/slightlyfull = list(CAT_PVTSUP, "Grenade pouch (grenades included)", 0,"black"),
+		/obj/item/storage/pouch/explosive = list(CAT_PVTSUP, "Explosive pouch", 0, "black"),
+		/obj/item/storage/pouch/construction/full = list(CAT_PVTSUP, "Construction pouch (materials included)", 0,"black"),
+		/obj/item/storage/pouch/general/large = list(CAT_PVTSUP, "Large general pouch", 0, "black"),
+		/obj/item/storage/pouch/radio = list(CAT_PVTSUP, "Radio pouch", 0, "black"),
+		/obj/item/storage/pouch/field_pouch/full = list(CAT_PVTSUP, "Field pouch", 0, "black"),
+		/obj/item/storage/pouch/firstaid/full = list(CAT_PVTSUP, "Firstaid pouch", 0, "orange"),
+		/obj/item/storage/pouch/firstaid/injectors/full = list(CAT_PVTSUP, "Injector pouch", 0,"orange"),
+
+		/obj/item/clothing/tie/storage/black_vest = list(CAT_PVTSUP, "Tactical black vest", 5, "orange"),
+		/obj/item/clothing/tie/storage/webbing = list(CAT_PVTSUP, "Tactical Webbing", 5, "black"),
+		/obj/item/clothing/tie/holster = list(CAT_PVTSUP, "Shoulder handgun holster", 5, "black"),
+
+		/obj/item/tool/shovel/etool = list(CAT_PVTSUP, "Entrenching tool", 3, "black"),
+		/obj/item/stack/sandbags_empty/half = list(CAT_PVTSUP, "Sandbags x25", 10, "black"),
+
+		/obj/item/explosive/plastique = list(CAT_PVTSUP, "Plastique explosive", 3, "black"),
+		/obj/item/detpack = list(CAT_PVTSUP, "Detonation pack", 5, "black"),
+		/obj/item/explosive/grenade/incendiary = list(CAT_PVTSUP, "M40 HIDP incendiary grenade", 3, "black"),
+		/obj/item/explosive/grenade/frag = list(CAT_PVTSUP, "M40 HEDP grenade", 3, "black"),
+		/obj/item/explosive/grenade/frag/m15 = list(CAT_PVTSUP, "M15 fragmentation grenade", 3, "black")
+
+		/obj/item/motiondetector = list(CAT_PVTSUP, "Motion detector", 5, "black"),
+
+		/obj/item/storage/firstaid/adv = list(CAT_PVTSUP, "Advanced firstaid kit", 10, "orange"),
+		/obj/item/storage/firstaid/regular = list(CAT_MEDSUP, "Firstaid kit", 2, "black"),
 	)
 
 
