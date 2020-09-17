@@ -220,6 +220,11 @@
 	fill_type = /obj/item/ammo_magazine/smg/standard_machinepistol
 	fill_number = 2
 
+/obj/item/storage/pouch/magazine/small
+	name = "small magazine pouch"
+	icon_state = "small_ammo_mag"
+	storage_slots = 1
+
 /obj/item/storage/pouch/magazine/large
 	name = "large magazine pouch"
 	icon_state = "large_ammo_mag"
