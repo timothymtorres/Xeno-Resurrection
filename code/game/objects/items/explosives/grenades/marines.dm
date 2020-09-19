@@ -270,7 +270,8 @@
 	var/fuel = 0
 	var/lower_fuel_limit = 800
 	var/upper_fuel_limit = 1000
-	var/flare_brightness = 5
+	var/flare_light_range = 5
+	var/flare_light_power = 0.65
 	var/flare_color= LIGHT_COLOR_FLARE
 
 /obj/item/explosive/grenade/flare/Initialize()
@@ -289,6 +290,16 @@
 
 /obj/item/explosive/grenade/flare/process()
 	fuel = max(fuel - 1, 0)
+	if(fuel == 300)      // 15% flare duration is 4 light
+		flare_light_range -= 1
+		update_brightness()
+	else if(fuel == 150) // 10% flare duration is 3 light
+		flare_light_range -= 1
+		update_brightness()
+	else if(fuel == 50)  //  5% flare duration is 2 light
+		flare_light_range -= 1
+		update_brightness()
+
 	if(!fuel || !active)
 		turn_off()
 
@@ -347,7 +358,8 @@
 /obj/item/explosive/grenade/flare/proc/update_brightness()
 	if(active && fuel > 0)
 		icon_state = "[initial(icon_state)]_active"
-		set_light(flare_brightness, l_color = flare_color)
+		set_light(flare_light_range, flare_light_power, l_color = flare_color)
+
 	else
 		icon_state = initial(icon_state)
 		set_light(0)
@@ -381,7 +393,7 @@
 	hud_state = "grenade_frag"
 	lower_fuel_limit = 25
 	upper_fuel_limit = 30
-	flare_brightness = 3
+	flare_light_range = 3
 	flare_color= LIGHT_COLOR_GREEN
 	var/datum/squad/user_squad
 	var/obj/effect/overlay/temp/laser_target/target
