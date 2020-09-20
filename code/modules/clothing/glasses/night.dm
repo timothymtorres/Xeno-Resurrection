@@ -6,7 +6,7 @@
 	desc = "You can totally see in the dark now!"
 	icon_state = "night"
 	item_state = "glasses"
-	darkness_view = 7
+	darkness_view = 4
 	lighting_alpha = LIGHTING_PLANE_ALPHA_INVISIBLE
 
 
