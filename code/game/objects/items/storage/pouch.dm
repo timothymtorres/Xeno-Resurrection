@@ -243,7 +243,7 @@
 	desc = "It can contain pistol and revolver ammo magazines."
 	max_w_class = 2
 	icon_state = "pistol_mag"
-	storage_slots = 3
+	storage_slots = 2
 
 	can_hold = list(
 		/obj/item/ammo_magazine/pistol,
@@ -252,28 +252,28 @@
 
 /obj/item/storage/pouch/magazine/pistol/large
 	name = "large pistol magazine pouch"
-	storage_slots = 6
+	storage_slots = 3
 	icon_state = "large_pistol_mag"
 
 /obj/item/storage/pouch/magazine/pistol/large/full
 	fill_type = /obj/item/ammo_magazine/pistol
-	fill_number = 6
+	fill_number = 3
 
 /obj/item/storage/pouch/magazine/pistol/pmc_mateba
 	fill_type = /obj/item/ammo_magazine/revolver/mateba
-	fill_number = 3
+	fill_number = 2
 
 /obj/item/storage/pouch/magazine/pistol/large/mateba
 	fill_type = /obj/item/ammo_magazine/revolver/mateba
-	fill_number = 6
+	fill_number = 3
 
 /obj/item/storage/pouch/magazine/pistol/vp70
 	fill_type = /obj/item/ammo_magazine/pistol/vp70
-	fill_number = 3
+	fill_number = 2
 
 /obj/item/storage/pouch/magazine/pistol/pmc_vp78
 	fill_type = /obj/item/ammo_magazine/pistol/vp78
-	fill_number = 3
+	fill_number = 2
 
 /obj/item/storage/pouch/magazine/upp
 	fill_type = /obj/item/ammo_magazine/rifle/type71
@@ -314,7 +314,7 @@
 	name = "explosive pouch"
 	desc = "It can contain grenades, plastiques, mine boxes, and other explosives."
 	icon_state = "large_explosive"
-	storage_slots = 4
+	storage_slots = 2
 	max_w_class = 3
 	can_hold = list(
 		/obj/item/explosive/plastique,
@@ -327,7 +327,7 @@
 
 /obj/item/storage/pouch/explosive/full
 	fill_type = /obj/item/explosive/grenade/frag
-	fill_number = 4
+	fill_number = 3
 
 /obj/item/storage/pouch/explosive/detpack/Initialize()
 	. = ..()
@@ -338,19 +338,19 @@
 
 /obj/item/storage/pouch/explosive/upp
 	fill_type = /obj/item/explosive/grenade/frag/upp
-	fill_number = 4
+	fill_number = 3
 
 /obj/item/storage/pouch/grenade
 	name = "Grenade pouch"
 	desc = "It can contain grenades."
 	icon_state = "explosive"
-	storage_slots = 6
+	storage_slots = 3
 	can_hold = list(
 		/obj/item/explosive/grenade)
 
 /obj/item/storage/pouch/grenade/slightlyfull
 	fill_type = /obj/item/explosive/grenade/frag
-	fill_number = 4
+	fill_number = 3
 
 /obj/item/storage/pouch/medical
 	name = "medical pouch"
@@ -609,7 +609,7 @@
 	name = "shotgun shell pouch"
 	desc = "A pouch specialized for holding shotgun ammo."
 	icon_state = "shotshells"
-	storage_slots = 4
+	storage_slots = 2
 	draw_mode = 0
 	can_hold = list(/obj/item/ammo_magazine/handful)
 
@@ -642,3 +642,10 @@
 			return TRUE
 
 	return ..()
+
+/obj/item/storage/pouch/shotgun/large
+	name = "large shotgun shell pouch"
+	desc = "A pouch specialized for holding shotgun ammo."
+	icon_state = "large_shotshells"
+	storage_slots = 3
+	can_hold = list(/obj/item/ammo_magazine/handful)

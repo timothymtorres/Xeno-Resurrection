@@ -258,30 +258,17 @@
 	icon_state = "marinebelt"
 	item_state = "marinebelt"
 	w_class = WEIGHT_CLASS_BULKY
-	storage_slots = 5
+	storage_slots = 3
 	max_w_class = 3
-	max_storage_space = 15
+	max_storage_space = 12
 	can_hold = list(
-		/obj/item/weapon/combat_knife,
-		/obj/item/attachable/bayonetknife,
-		/obj/item/flashlight/flare,
-		/obj/item/explosive/grenade/flare,
 		/obj/item/ammo_magazine/rifle,
-		/obj/item/cell/lasgun,
 		/obj/item/ammo_magazine/smg,
-		/obj/item/ammo_magazine/pistol,
-		/obj/item/ammo_magazine/revolver,
 		/obj/item/ammo_magazine/sniper,
-		/obj/item/ammo_magazine/handful,
-		/obj/item/explosive/grenade,
-		/obj/item/explosive/mine,
-		/obj/item/reagent_containers/food/snacks
 		)
 
 /obj/item/storage/belt/marine/t18/Initialize()
 	. = ..()
-	new /obj/item/ammo_magazine/rifle/standard_carbine(src)
-	new /obj/item/ammo_magazine/rifle/standard_carbine(src)
 	new /obj/item/ammo_magazine/rifle/standard_carbine(src)
 	new /obj/item/ammo_magazine/rifle/standard_carbine(src)
 	new /obj/item/ammo_magazine/rifle/standard_carbine(src)
@@ -291,13 +278,9 @@
 	new /obj/item/ammo_magazine/rifle/standard_assaultrifle(src)
 	new /obj/item/ammo_magazine/rifle/standard_assaultrifle(src)
 	new /obj/item/ammo_magazine/rifle/standard_assaultrifle(src)
-	new /obj/item/ammo_magazine/rifle/standard_assaultrifle(src)
-	new /obj/item/ammo_magazine/rifle/standard_assaultrifle(src)
 
 /obj/item/storage/belt/marine/t90/Initialize()
 	. = ..()
-	new /obj/item/ammo_magazine/smg/standard_smg(src)
-	new /obj/item/ammo_magazine/smg/standard_smg(src)
 	new /obj/item/ammo_magazine/smg/standard_smg(src)
 	new /obj/item/ammo_magazine/smg/standard_smg(src)
 	new /obj/item/ammo_magazine/smg/standard_smg(src)
@@ -305,16 +288,12 @@
 /obj/item/storage/belt/marine/m42a/Initialize()
 	. = ..()
 	new /obj/item/ammo_magazine/sniper/flak(src)
-	new /obj/item/ammo_magazine/sniper/flak(src)
-	new /obj/item/ammo_magazine/sniper/incendiary(src)
 	new /obj/item/ammo_magazine/sniper/incendiary(src)
 	new /obj/item/ammo_magazine/sniper(src)
 
 /obj/item/storage/belt/marine/m4ra/Initialize()
 	. = ..()
 	new /obj/item/ammo_magazine/rifle/m4ra/impact(src)
-	new /obj/item/ammo_magazine/rifle/m4ra/impact(src)
-	new /obj/item/ammo_magazine/rifle/m4ra/incendiary(src)
 	new /obj/item/ammo_magazine/rifle/m4ra/incendiary(src)
 	new /obj/item/ammo_magazine/rifle/m4ra(src)
 
@@ -366,9 +345,9 @@
 	icon_state = "shotgunbelt"
 	item_state = "shotgunbelt"
 	w_class = WEIGHT_CLASS_BULKY
-	storage_slots = 14
+	storage_slots = 5
 	max_w_class = 2
-	max_storage_space = 28
+	max_storage_space = 10
 	can_hold = list(/obj/item/ammo_magazine/handful)
 
 
@@ -430,9 +409,9 @@
 	icon_state="grenadebelt" // temp
 	item_state="grenadebelt"
 	w_class = WEIGHT_CLASS_BULKY
-	storage_slots = 9
+	storage_slots = 5
 	max_w_class = 3
-	max_storage_space = 27
+	max_storage_space = 15
 	can_hold = list(/obj/item/explosive/grenade)
 
 
@@ -440,9 +419,6 @@
 	. = ..()
 	new /obj/item/explosive/grenade/incendiary(src)
 	new /obj/item/explosive/grenade/incendiary(src)
-	new /obj/item/explosive/grenade/incendiary(src)
-	new /obj/item/explosive/grenade/incendiary(src)
-	new /obj/item/explosive/grenade/frag(src)
 	new /obj/item/explosive/grenade/frag(src)
 	new /obj/item/explosive/grenade/frag(src)
 	new /obj/item/explosive/grenade/frag(src)
@@ -477,9 +453,10 @@
 /obj/item/storage/belt/sparepouch
 	name= "\improper G8 general utility pouch"
 	desc= "A small, lightweight pouch that can be clipped onto Armat Systems M3 Pattern armor or your belt to provide additional storage for miscellaneous gear or box and drum magazines."
-	storage_slots = 3
+	storage_slots = null
 	w_class = WEIGHT_CLASS_BULKY
 	max_w_class = 3
+	max_storage_space = 8
 	icon_state= "sparepouch"
 	item_state= "sparepouch"
 

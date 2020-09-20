@@ -412,7 +412,7 @@
 	var/obj/item/storage/internal/hold = /obj/item/storage/internal/tie
 
 /obj/item/storage/internal/tie
-	storage_slots = 3
+	storage_slots = 1
 
 /obj/item/clothing/tie/storage/Initialize()
 	. = ..()
@@ -514,7 +514,7 @@
 	hold = /obj/item/storage/internal/tie/vest
 
 /obj/item/storage/internal/tie/vest
-	storage_slots = 5
+	storage_slots = 2
 	cant_hold = list(
 		/obj/item/stack/razorwire,
 		/obj/item/stack/sheet,
@@ -541,8 +541,8 @@
 	hold = /obj/item/storage/internal/tie/white_vest
 
 /obj/item/storage/internal/tie/white_vest
-	storage_slots = 12
-	max_storage_space = 24
+	storage_slots = 5
+	max_storage_space = 10
 	max_w_class = WEIGHT_CLASS_BULKY
 
 	can_hold = list(
@@ -557,7 +557,7 @@
 	hold = /obj/item/storage/internal/tie/white_vest/medic
 
 /obj/item/storage/internal/tie/white_vest/medic
-	storage_slots = 6 //one more than the brown webbing but you lose out on being able to hold non-medic stuff
+	storage_slots = 3 //one more than the brown webbing but you lose out on being able to hold non-medic stuff
 	can_hold = list(
 	/obj/item/stack/medical,
 	/obj/item/healthanalyzer,
