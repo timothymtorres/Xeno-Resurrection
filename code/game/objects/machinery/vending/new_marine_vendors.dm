@@ -305,18 +305,20 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 
 		/obj/item/clothing/head/helmet/marine/standard = list(CAT_HEL, "Regular helmet", 0, "white"),
 
-		/obj/item/clothing/suit/storage/marine/pasvest = list(CAT_AMR, "Regular armor", 0, "orange"),
+		/obj/item/clothing/suit/storage/marine/M3LB = list(CAT_AMR, "Light armor", 0, "black"),
+		/obj/item/clothing/suit/storage/marine = list(CAT_AMR, "Medium armor", 0, "orange"),
+		/obj/item/clothing/suit/storage/marine/M3HB = list(CAT_AMR, "Heavy armor", 0, "black"),
 
 		/obj/item/storage/backpack/marine/satchel = list(CAT_BAK, "Satchel", 0, "orange"),
 		/obj/item/storage/backpack/marine/standard = list(CAT_BAK, "Backpack", 0, "black"),
 
-		/obj/item/storage/belt/sparepouch = list(CAT_BEL, "Utility belt", 0, "black"),
-		/obj/item/storage/belt/marine = list(CAT_BEL, "Standard ammo belt", 0, "orange"),
+		/obj/item/storage/belt/sparepouch = list(CAT_BEL, "Utility belt", 0, "orange"),
+		/obj/item/storage/belt/marine = list(CAT_BEL, "Rifle ammo belt", 0, "orange"),
 		/obj/item/storage/belt/shotgun = list(CAT_BEL, "Shotgun ammo belt", 0, "orange"),
+		/obj/item/storage/belt/grenade = list(CAT_BEL, "Grenade belt", 0, "black"),
 		/obj/item/storage/belt/knifepouch = list(CAT_BEL, "Knives belt", 0, "black"),
 		/obj/item/storage/belt/gun/pistol/standard_pistol = list(CAT_BEL, "Pistol belt", 0, "black"),
 		/obj/item/storage/belt/gun/revolver/standard_revolver = list(CAT_BEL, "Revolver belt", 0, "black"),
-		/obj/item/belt_harness/marine = list(CAT_BEL, "Belt harness", 0, "black"),
 
 		/obj/item/clothing/mask/gas = list(CAT_MAS, "Gas mask", 0,"black"),
 		/obj/item/clothing/mask/rebreather/scarf = list(CAT_MAS, "Heat absorbent coif", 0,"black"),
@@ -328,6 +330,7 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/clothing/mask/rebreather = list(CAT_MAS, "Rebreather", 0,"black"),
 
 		/obj/item/storage/pouch/magazine/small = list(CAT_POU, "Small magazine pouch", 0,"black"),
+		/obj/item/storage/pouch/shotgun = list(CAT_POU, "Shotgun shell pouch", 0, "black"),
 		/obj/item/storage/pouch/flare/full = list(CAT_POU, "Flare pouch", 0, "orange"),
 		/obj/item/storage/pouch/magazine/pistol = list(CAT_POU, "Pistol magazine pouch", 0,"black"),
 		/obj/item/storage/pouch/pistol = list(CAT_POU, "Sidearm pouch", 0,"black"),
@@ -356,7 +359,7 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/storage/pouch/general/medium = list(CAT_PVTSUP, "Medium general pouch", 0, "black"),
 		/obj/item/storage/pouch/general/large = list(CAT_PVTSUP, "Large general pouch", 0, "black"),
 
-		/obj/item/storage/pouch/shotgun = list(CAT_PVTSUP, "Shotgun shell pouch", 0, "black"),
+		/obj/item/storage/pouch/shotgun/large = list(CAT_PVTSUP, "Large shotgun shell pouch", 0, "black"),
 
 		/obj/item/storage/pouch/magazine = list(CAT_PVTSUP, "Magazine pouch", 0, "black"),
 		/obj/item/storage/pouch/magazine/large = list(CAT_PVTSUP, "Large magazine pouch", 0, "black"),
@@ -385,9 +388,10 @@ GLOBAL_LIST_INIT(marine_selector_cats, list(
 		/obj/item/detpack = list(CAT_PVTSUP, "Detonation pack", 5, "black"),
 		/obj/item/explosive/grenade/incendiary = list(CAT_PVTSUP, "M40 HIDP incendiary grenade", 3, "black"),
 		/obj/item/explosive/grenade/frag = list(CAT_PVTSUP, "M40 HEDP grenade", 3, "black"),
-		/obj/item/explosive/grenade/frag/m15 = list(CAT_PVTSUP, "M15 fragmentation grenade", 3, "black")
+		/obj/item/explosive/grenade/frag/m15 = list(CAT_PVTSUP, "M15 fragmentation grenade", 3, "black"),
 
 		/obj/item/motiondetector = list(CAT_PVTSUP, "Motion detector", 5, "black"),
+		/obj/item/clothing/glasses/night = list(CAT_PVTSUP, "Night Vision Googles", 40, "black"),
 
 		/obj/item/storage/firstaid/adv = list(CAT_PVTSUP, "Advanced firstaid kit", 10, "orange"),
 		/obj/item/storage/firstaid/regular = list(CAT_MEDSUP, "Firstaid kit", 2, "black"),
