@@ -4,13 +4,13 @@
 $include dbconfig.txt
 
 ## Server name: This appears at the top of the screen in-game.
-SERVER_NAME Something
+SERVER_NAME CM/TGMC Survival Horror (NO-LAG!) [70:30 winrate]
 
 ## Hosted by name for unix platforms.
-HOSTEDBY yournamehere
+HOSTEDBY Tilus
 
 ## The title of the main window.
-TITLE Change Me
+TITLE CM/TGMC Survival Horror
 
 ## Optional URL for faster resource downloading.
 #RESOURCE_URL url
@@ -47,7 +47,7 @@ PROTECT_LEGACY_RANKS
 #RULESURL
 #DISCORDURL
 #DONATIONURL
-#GITHUBURL
+GITHUBURL https://github.com/timothymtorres/TerraGov-Marine-Corps
 #BANAPPEALS
 
 ## Uncomment to enable global ban DB using the provided URL. The API should expect to receive a ckey at the end of the URL.

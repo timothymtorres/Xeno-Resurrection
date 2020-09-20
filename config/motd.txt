@@ -1,4 +1,4 @@
-<h1>Welcome to the TGMC codebase!</h1>
+<h1>Welcome to the Survival Horror codebase that uses TGMC and CM combined!</h1>
 
-<i>Don't forget to set your own MOTD.</i>
+<i>This server is a WIP.  The goal is to turn it into a survival horror game based on the movie.</i>
 <br><br>
