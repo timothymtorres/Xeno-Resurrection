@@ -59,6 +59,7 @@ Defined in conflicts.dm of the #defines folder.
 	var/burst_scatter_mod = 0 //Modifier to scatter from wielded burst fire, works off a multiplier.
 	var/silence_mod 	= 0 //Adds silenced to weapon
 	var/light_mod 		= 0 //Adds an x-brightness flashlight to the weapon, which can be toggled on and off.
+	var/light_power_mod = 1 //Changes power of brightness for light source from 1.00 - 0.00.
 	var/delay_mod 		= 0 //Changes firing delay. Cannot go below 0.
 	var/burst_delay_mod = 0 //Changes burst firing delay. Cannot go below 0.
 	var/burst_mod 		= 0 //Changes burst rate. 1 == 0.
@@ -570,7 +571,8 @@ Defined in conflicts.dm of the #defines folder.
 	desc = "A simple flashlight used for mounting on a firearm. \nHas no drawbacks, but isn't particuraly useful outside of providing a light source."
 	icon_state = "flashlight"
 	attach_icon = "flashlight_a"
-	light_mod = 8
+	light_mod = 5
+	light_power_mod = 0.65
 	slot = "rail"
 	materials = list(/datum/material/metal = 100, /datum/material/glass = 20)
 	flags_attach_features = ATTACH_REMOVABLE|ATTACH_ACTIVATION
@@ -591,7 +593,7 @@ Defined in conflicts.dm of the #defines folder.
 	else
 		icon_state = "flashlight-on"
 		attach_icon = "flashlight_a-on"
-		master_gun.set_light(light_mod)
+		master_gun.set_light(light_mod, light_power_mod)
 
 	master_gun.flags_gun_features ^= GUN_FLASHLIGHT_ON
 

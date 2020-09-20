@@ -105,11 +105,12 @@
 	This proc will toggle the light enabled or disabled on the armor, playing a sound and updating the action button for the user.
 */
 /obj/item/clothing/suit/proc/toggle_armor_light(mob/user)
+	light_power = 0.65
 	TIMER_COOLDOWN_START(src, COOLDOWN_ARMOR_LIGHT, 2.5 SECONDS)
 	if(flags_armor_features & ARMOR_LAMP_ON)
 		set_light(0)
 	else
-		set_light(light_strength)
+		set_light(light_strength, light_power)
 	flags_armor_features ^= ARMOR_LAMP_ON
 	playsound(src, 'sound/items/flashlight.ogg', 15, TRUE)
 	update_icon(user)

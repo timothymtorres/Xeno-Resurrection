@@ -19,6 +19,7 @@
 	siemens_coefficient = 0.7
 	permeability_coefficient = 0.8
 	slowdown = SLOWDOWN_ARMOR_MEDIUM
+	light_strength = 4
 	allowed = list(/obj/item/weapon/gun/,
 		/obj/item/tank/emergency_oxygen,
 		/obj/item/storage/bible,
@@ -45,7 +46,7 @@
 		/obj/item/ammo_magazine/sniper,
 		/obj/item/cell/lasgun
 	)
-	max_storage_space = 6
+	storage_slots = 1
 
 /obj/item/clothing/suit/storage/marine/Initialize()
 	. = ..()
@@ -98,6 +99,16 @@
 	icon_state = "1"
 	soft_armor = list("melee" = 65, "bullet" = 70, "laser" = 70, "energy" = 30, "bomb" = 60, "bio" = 50, "rad" = 20, "fire" = 50, "acid" = 55)
 	slowdown = SLOWDOWN_ARMOR_HEAVY
+	light_strength = 5
+
+/obj/item/storage/internal/suit/marine/M3HB
+	bypass_w_limit = list(
+		/obj/item/ammo_magazine/rifle,
+		/obj/item/ammo_magazine/smg,
+		/obj/item/ammo_magazine/sniper,
+		/obj/item/cell/lasgun
+	)
+	storage_slots = 2
 
 /obj/item/clothing/suit/storage/marine/M3LB
 	name = "\improper M3-LB pattern marine armor"
@@ -105,7 +116,15 @@
 	icon_state = "2"
 	soft_armor = list("melee" = 45, "bullet" = 55, "laser" = 55, "energy" = 20, "bomb" = 45, "bio" = 30, "rad" = 10, "fire" = 25, "acid" = 35)
 	slowdown = SLOWDOWN_ARMOR_VERY_LIGHT
-	light_strength = 8 //because it's LIGHT armor, get it?
+	light_strength = 3
+
+/obj/item/storage/internal/suit/marine/M3LB
+	bypass_w_limit = list(
+		/obj/item/ammo_magazine/rifle,
+		/obj/item/ammo_magazine/smg,
+		/obj/item/ammo_magazine/sniper,
+		/obj/item/cell/lasgun
+	)
 
 /obj/item/clothing/suit/storage/marine/harness
 	name = "\improper M3 pattern marine harness"
