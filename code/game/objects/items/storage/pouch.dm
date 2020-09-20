@@ -350,7 +350,7 @@
 
 /obj/item/storage/pouch/grenade/slightlyfull
 	fill_type = /obj/item/explosive/grenade/frag
-	fill_number = 3
+	fill_number = 2
 
 /obj/item/storage/pouch/medical
 	name = "medical pouch"
